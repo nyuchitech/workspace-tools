@@ -1,0 +1,31 @@
+{
+  "name": "workspace-tools",
+  "version": "1.0.0",
+  "description": "Nyuchi Google Workspace tools - Gmail Add-on and Email Signature Generator",
+  "private": true,
+  "workspaces": [
+    "gmail-addon",
+    "email-signature"
+  ],
+  "scripts": {
+    "push:gmail": "cd gmail-addon && clasp push",
+    "push:signature": "cd email-signature && clasp push",
+    "push:all": "npm run push:gmail && npm run push:signature",
+    "open:gmail": "cd gmail-addon && clasp open",
+    "open:signature": "cd email-signature && clasp open",
+    "deploy:gmail": "cd gmail-addon && clasp deploy",
+    "deploy:signature": "cd email-signature && clasp deploy"
+  },
+  "keywords": [
+    "google-workspace",
+    "gmail-addon",
+    "email-signature",
+    "nyuchi"
+  ],
+  "author": "Nyuchi",
+  "license": "MIT",
+  "devDependencies": {
+    "@google/clasp": "^2.4.2",
+    "@types/google-apps-script": "^1.0.83"
+  }
+}

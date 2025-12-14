@@ -1,0 +1,56 @@
+{
+  "timeZone": "Africa/Harare",
+  "dependencies": {
+    "enabledAdvancedServices": [
+      {
+        "userSymbol": "Gmail",
+        "version": "v1",
+        "serviceId": "gmail"
+      }
+    ]
+  },
+  "oauthScopes": [
+    "https://www.googleapis.com/auth/gmail.settings.basic",
+    "https://www.googleapis.com/auth/script.external_request",
+    "https://www.googleapis.com/auth/userinfo.email"
+  ],
+  "addOns": {
+    "common": {
+      "name": "Nyuchi Email Signature",
+      "logoUrl": "https://assets.nyuchi.com/logos/nyuchi/Nyuchi_Africa_Logo_dark.svg",
+      "useLocaleFromApp": true,
+      "homepageTrigger": {
+        "runFunction": "onHomepage"
+      },
+      "universalActions": [
+        {
+          "label": "Reset Settings",
+          "runFunction": "resetSettings"
+        },
+        {
+          "label": "Help",
+          "openLink": {
+            "url": "https://brand.nyuchi.com"
+          }
+        }
+      ]
+    },
+    "gmail": {
+      "contextualTriggers": [],
+      "composeTrigger": {
+        "selectActions": [
+          {
+            "text": "Insert Signature",
+            "runFunction": "onComposeInsert"
+          }
+        ],
+        "draftAccess": "NONE"
+      },
+      "homepageTrigger": {
+        "runFunction": "onHomepage"
+      }
+    }
+  },
+  "exceptionLogging": "STACKDRIVER",
+  "runtimeVersion": "V8"
+}
